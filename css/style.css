@@ -7,3 +7,9 @@
   justify-content:space-between;
   
 }
+body{
+  background-color:#5DADE2;
+}
+h4,h3{
+  font-family: 'Permanent Marker', cursive;
+}
