@@ -8,9 +8,6 @@
 
 
 // DOCUMENT READY FUNCTION BELOW
-$("#shoot").click(function(){
-    $("#userChoice").text($("#input").val());
-});
 
 var userChoice= " " ;
 var computerChoice= " " ;
@@ -24,16 +21,38 @@ $("#shoot").click(function(){
     var randomNumber= Math.random()*3.0;
     console.log(randomNumber);
     if ( randomNumber < 1){
-    $("#computerChoice").text("rock");
+    //$("#computerChoice").text("rock");
+    computerChoice="rock";
     }
     else if (randomNumber < 2){
-        $("#computerChoice").text("scissors");
+        //$("#computerChoice").text("scissors");
+    computerChoice="scissors";
     }
     else{
-        $("#computerChoice").text("paper");
+        //$("#computerChoice").text("paper");
+    computerChoice="paper";
     }
-    
-
+        $("#computerChoice").text(computerChoice);
+    // console.log(`userChoice is ${userChoice}`);
+    // console.log(`computerChoice is ${computerChoice}`);
+    console.log(computerChoice);
+if(
+    (userChoice==="rock"&& computerChoice==="scissors")
+||  (userChoice==="paper"&& computerChoice==="rock")
+||  (userChoice==="scissors"&& computerChoice==="paper")){   
+    winner="User Wins :) ";
+    console.log(winner);
+    $("#Result").text(winner);
+}
+else if(userChoice===computerChoice){
+    winner="It's a Tie :|";
+    $("#Result").text(winner);
+}
+else{
+    winner="Computer Wins :("
+    $("#Result").text(winner);
+}
+ $("#input").val(" ");
 });
 
 
